@@ -1,0 +1,115 @@
+/* 共通レイアウト（色・書体は各テーマの変数で決める） */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.75;word-break:auto-phrase;overflow-wrap:anywhere;line-break:strict}
+a{color:var(--link)}
+.wrap{max-width:880px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.num{font-family:var(--f-num);font-feature-settings:"tnum"}
+header.top{border-bottom:var(--rule)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-family:var(--f-display);font-weight:900;font-size:17px;white-space:nowrap}
+.stamp{display:inline-block}
+.cta-s{font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.crumbs{font-size:12px;color:var(--muted);padding-block:14px 4px}
+.crumbs a{color:var(--muted)}
+article{display:grid;gap:var(--gap)}
+.hero{display:grid;gap:14px;padding-block:8px 4px}
+.tags,.certs,.chips{display:flex;flex-wrap:wrap;gap:6px}
+.tag,.cert,.chips a{font-size:12px;padding:2px 9px;text-decoration:none;color:inherit;white-space:nowrap}
+h1{font-family:var(--f-display);font-size:clamp(28px,6vw,46px);line-height:1.2;margin:0;text-wrap:balance}
+h2{font-family:var(--f-display);font-size:19px;margin:0 0 12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+h2 small{font-family:var(--f-body);font-size:12px;font-weight:500;color:var(--muted)}
+h3{font-size:15px;margin:18px 0 10px}
+.verdict{margin:0;font-size:16px}
+.vlabel{display:inline-block;margin-right:8px;font-size:12px;font-weight:700;padding:1px 8px;vertical-align:2px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.kpi,.who>div{display:grid;gap:2px;align-content:start;padding:12px}
+.kpi span,.who span{font-size:12px;color:var(--muted)}
+.kpi b,.who b{font-size:24px;line-height:1.2}
+.kpi small,.who small{font-size:11.5px;color:var(--muted)}
+.diff{font-family:var(--f-num);font-size:12px;margin-left:6px;color:var(--muted)}
+.diff.up{color:var(--good)}.diff.dn{color:var(--bad)}
+.cta{display:block;text-align:center;font-weight:900;text-decoration:none;padding:15px 16px;font-size:16px}
+.card{padding:20px}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.fit ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.fit li{padding-left:1.6em;position:relative}
+.fit li::before{position:absolute;left:0;font-weight:900}
+.ok li::before{content:"○";color:var(--good)}
+.ng li::before{content:"×";color:var(--bad)}
+.axes{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+.ax{display:grid;gap:4px}
+.ax-h{display:flex;justify-content:space-between;font-weight:700;font-size:14px}
+.ax-h b{font-size:18px}
+.track{height:var(--track-h);background:var(--track);overflow:hidden}
+.track i{display:block;height:100%;background:var(--bar)}
+.ax small{font-size:12px;color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);margin:12px 0 0}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.links a{display:grid;gap:1px;padding:10px 12px;text-decoration:none;color:var(--ink)}
+.links a span{font-size:12px;color:var(--muted)}
+.ad{display:grid;gap:12px}
+.ad-h{display:flex;align-items:center;gap:10px}.ad-h h2{margin:0}
+.pr{font-size:11px;font-weight:700;border:1px solid var(--muted);color:var(--muted);padding:0 5px;letter-spacing:.06em}
+.ag{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding-top:12px;border-top:1px solid var(--line)}
+.ag p{margin:0;font-size:13px;color:var(--muted);grid-column:1}
+.ag .btn{grid-row:1/3;grid-column:2;font-size:13px;font-weight:700;text-decoration:none;padding:9px 14px;white-space:nowrap}
+.chips a{padding:4px 10px}
+.foot{margin-top:48px;padding-block:24px 40px;font-size:12px;color:var(--muted);line-height:1.8}
+.foot b{color:var(--ink)}
+@media (max-width:640px){
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fit,.axes,.links{grid-template-columns:1fr}
+  .card{padding:16px}
+  .ag{grid-template-columns:1fr}.ag .btn{grid-row:auto;grid-column:1;text-align:center;margin-top:8px}
+  .cta-s{display:none}
+}
+.lbl{font-family:var(--f-body);font-size:11px;font-weight:700;letter-spacing:.12em;padding:1px 7px;align-self:center}
+.karte-no{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0;font-size:12px;color:var(--muted)}
+.fit .card{position:relative}
+.fn{font-size:11.5px;color:var(--muted);line-height:1.7;display:grid;gap:2px}.fn p{margin:0}
+.src-note{font-size:11.5px}
+.ihan{margin:10px 0 0}
+.ihan.on{border:1px solid var(--bad);border-left:4px solid var(--bad);padding:10px 12px}
+.ihan.on b{color:var(--bad);font-size:14px}.ihan.on p{margin:4px 0 0;font-size:13px}
+
+.aibox details{margin-top:10px}.aibox summary{cursor:pointer;font-size:13px;color:var(--muted)}.aibox textarea{width:100%;min-height:220px;font:inherit;font-size:12.5px;margin-top:6px;box-sizing:border-box}
+.aibox [data-aicopy]{display:block;width:100%;margin-top:8px;padding:11px 14px;border:0;font:inherit;font-size:14px;font-weight:700;cursor:pointer;background:var(--ink);color:var(--paper)}
+/* カルテ：オフホワイトの紙・墨黒・朱赤。罫線と細枠、朱のハンコ */
+:root{color-scheme:light;--bg:#F6F3EC;--paper:#FFFEFA;--ink:#161616;--muted:#5F5B53;--line:#D9D3C6;--link:#161616;--shu:#C8291C;
+--good:#161616;--bad:#C8291C;--bar:#161616;--track:#E6E0D3;--track-h:6px;--gap:20px;--rule:1px solid #161616;
+--f-display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;--f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;--f-num:"JetBrains Mono",ui-monospace,monospace}
+header.top{background:var(--paper);border-bottom:3px double var(--ink)}
+.logo{font-family:var(--f-display);font-weight:800}
+.stamp{color:var(--shu);border:2px solid var(--shu);padding:0 6px;font-family:var(--f-body);font-weight:900;letter-spacing:.06em;transform:rotate(-4deg);border-radius:3px}
+.cta-s{color:var(--ink);border:1px solid var(--ink);padding:4px 12px}
+.karte-no{border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:6px 0;letter-spacing:.06em}
+.karte-no span:first-child{color:var(--ink);font-weight:700}
+h1{font-weight:800;font-size:clamp(32px,6.5vw,52px)}
+h2{font-weight:800;font-size:20px;border-bottom:1px solid var(--ink);padding-bottom:8px}
+.lbl{border:1px solid var(--ink);color:var(--ink)}
+.ng .lbl{border-color:var(--shu);color:var(--shu)}
+.tag{border:1px solid var(--line);background:var(--paper)}.tag.t{border-color:var(--ink);background:var(--ink);color:var(--paper)}.tag.f{border-color:var(--ink)}
+.verdict{background:var(--paper);border:1px solid var(--ink);padding:14px 16px;font-family:var(--f-display);font-weight:700;font-size:18px;line-height:1.7}
+.vlabel{background:var(--ink);color:var(--paper);font-family:var(--f-body);letter-spacing:.1em}
+.kpis{gap:0;border:1px solid var(--ink);background:var(--paper)}
+.kpis .kpi{border-right:1px solid var(--line);padding:12px 14px}.kpis .kpi:last-child{border-right:0}
+.who>div{background:var(--paper);border:1px solid var(--line)}
+.card{background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--ink)}
+.cta{background:var(--shu);color:#fff;letter-spacing:.04em}
+.cta:hover{background:#A82015}
+.fit .card::after{position:absolute;top:14px;right:14px;width:62px;height:62px;border:2.5px solid currentColor;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:14px;letter-spacing:.04em;transform:rotate(-14deg);opacity:.85;font-family:var(--f-display)}
+.ok::after{content:"適合";color:var(--ink)}
+.ng::after{content:"不適合";color:var(--shu);font-size:13px!important}
+.ng{border-top-color:var(--shu)}
+.ok li::before{content:"○"}.ng li::before{content:"×"}
+.fit h2{padding-right:70px}
+.links a{border:1px solid var(--line);background:var(--bg)}
+.links a:hover{border-color:var(--ink)}
+.cert{border:1px solid var(--ink);background:var(--paper)}.cert.top{background:var(--ink);color:var(--paper)}
+.chips a{border:1px solid var(--ink);background:var(--paper)}
+.ad{border:1px dashed var(--muted);border-top:1px dashed var(--muted);background:transparent}
+.ag .btn{background:var(--ink);color:var(--paper)}
+.foot{border-top:1px solid var(--ink);background:var(--paper)}
+@media (max-width:640px){.kpis .kpi:nth-child(2){border-right:0}.kpis .kpi:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:640px){.cta{font-size:15px;padding:14px 10px}}

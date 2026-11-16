@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sontaku-zero.vercel.app/sitemap.xml
