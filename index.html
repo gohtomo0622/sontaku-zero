@@ -475,6 +475,7 @@ body:not(.is-unlocked) .lockable td.lk:hover .v{opacity:.5}
   .gate{grid-template-columns:minmax(0,1fr)}.gate-btn{width:100%}
   body:not(.is-unlocked) .lockable td.lk::after{right:auto;left:60px;top:auto;bottom:2px;transform:none}
 }
+.notelink{margin:10px 0 0;font-size:13px;color:var(--muted)}.notelink a{color:inherit}.guidebox{border:1px solid var(--line);padding:14px 16px;display:grid;gap:6px;margin-bottom:16px}.guidebox p{margin:0;font-size:13px;color:var(--muted)}.guidebox .btn{justify-self:start}
 .aibox{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);display:grid;gap:8px}.aibox .aihint{margin:0;font-size:13px;color:var(--muted)}.aibox details summary{cursor:pointer;font-size:13px;color:var(--muted)}.aibox textarea{width:100%;min-height:220px;font:inherit;font-size:12.5px;margin-top:6px}
 .diag-go{font:inherit;font-weight:900;font-size:16px;border:0;padding:12px;cursor:pointer;width:100%}
 /* ===== モーダル ===== */
@@ -624,6 +625,11 @@ body:not(.is-unlocked) #v-new .rk-list li::after{content:"🔒";position:absolut
       <div class="cards" id="mis"></div>
     </div>
     <div class="agents res" id="agents"></div>
+    <div class="guidebox res">
+      <b>会社タイプ別の見極め方を、noteで解説しています</b>
+      <p>診断で出た会社が4タイプのどれに当たるか、そのタイプで転職して失敗しやすいパターン、面接で確かめる質問をまとめました（一部有料）。運営者自身のnoteで、上のPR枠とは関係ありません。</p>
+      <a class="btn ghost" href="https://note.com/sontaku_zero" target="_blank" rel="noopener">noteを見る</a>
+    </div>
     <div class="share res">
       <div class="sec-h" style="margin:0"><h2 style="font-size:17px">結果をシェア</h2></div>
       <label for="sharetext" class="sr" style="font-size:12px;color:var(--muted)">そのまま投稿できる文面です（編集可）</label>
@@ -720,6 +726,7 @@ body:not(.is-unlocked) #v-new .rk-list li::after{content:"🔒";position:absolut
   <div class="rk" style="margin-top:28px">
     <div class="sec-h"><h2 id="bz-type-h">あなたの会社は何タイプ？</h2><p>ウェット度（人間関係の濃さ）と熱量（仕事の追い込み具合）で、500社を4タイプに分けました。会社名を押すと詳細が開きます</p></div>
     <div class="types" id="bz-types"></div>
+    <p class="notelink">4タイプそれぞれの見極め方（求人票の読み方、面接で確かめる質問）は、<a href="https://note.com/sontaku_zero" target="_blank" rel="noopener">運営者のnote</a>で詳しく解説しています（一部有料）。</p>
   </div>
   <div class="rk" style="margin-top:28px">
     <div class="sec-h"><h2 id="bz-ind-h">業界別、本当に働きやすいのはどこ？</h2><p>業界ごとの平均（年収は回答者の平均年収、その他は500社中の順位0〜100）。10社以上ある業界のみ。各列で一番高い値を強調しています</p></div>
