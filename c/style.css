@@ -75,6 +75,9 @@ h3{font-size:15px;margin:18px 0 10px}
 
 .aibox details{margin-top:10px}.aibox summary{cursor:pointer;font-size:13px;color:var(--muted)}.aibox textarea{width:100%;min-height:220px;font:inherit;font-size:12.5px;margin-top:6px;box-sizing:border-box}
 .aibox [data-aicopy]{display:block;width:100%;margin-top:8px;padding:11px 14px;border:0;font:inherit;font-size:14px;font-weight:700;cursor:pointer;background:var(--ink);color:var(--paper)}
+.rq details{margin-top:10px}.rq summary{cursor:pointer;font-size:13px;color:var(--muted)}.rq textarea{width:100%;min-height:220px;font:inherit;font-size:12.5px;margin-top:6px;box-sizing:border-box}
+.rq [data-aicopy]{display:block;width:100%;margin-top:12px;padding:11px 14px;border:0;font:inherit;font-size:14px;font-weight:700;cursor:pointer;background:var(--ink);color:var(--paper)}
+.rqlist{margin:0;padding-left:1.4em;display:grid;gap:12px}.rqlist b{display:block;font-weight:700}.rqlist small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 /* カルテ：オフホワイトの紙・墨黒・朱赤。罫線と細枠、朱のハンコ */
 :root{color-scheme:light;--bg:#F6F3EC;--paper:#FFFEFA;--ink:#161616;--muted:#5F5B53;--line:#D9D3C6;--link:#161616;--shu:#C8291C;
 --good:#161616;--bad:#C8291C;--bar:#161616;--track:#E6E0D3;--track-h:6px;--gap:20px;--rule:1px solid #161616;

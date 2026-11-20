@@ -65,6 +65,7 @@ legend .q{font-family:var(--f-num);color:var(--accent);margin-right:6px;font-siz
 .card.mis .score b{color:var(--warn)}
 .why{grid-column:2 / 4;margin:6px 0 0;padding:0;list-style:none;display:grid;gap:3px;font-size:13.5px}
 .why li::before{content:"＋";color:var(--good);font-weight:700;margin-right:6px}
+.rqlink{grid-column:1 / -1;margin:4px 0 0;font-size:13px}
 .card.mis .why li::before{content:"！";color:var(--warn)}
 .scales{grid-column:2 / 4;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 16px;margin-top:10px}
 @media (max-width:520px){.scales{grid-template-columns:repeat(2,minmax(0,1fr))}.card{grid-template-columns:34px minmax(0,1fr) auto}}
@@ -956,6 +957,7 @@ function card(c, r, i, mis){
     <ul class="why">${why.map(w=>`<li>${esc(w)}</li>`).join("")}</ul>
     <div class="scales">${scales(c)}</div>
     ${vsRow(c)}
+    ${!mis&&CID[c.name]?`<p class="rqlink"><a class="extlink" href="/c/${CID[c.name]}#gyaku">この会社の面接で聞くべき逆質問 →</a></p>`:""}
   </article>`;
 }
 const AINOTE = "データについて：評価データ由来の数値（総合スコア・傾向値・データ量など）は、インターネット上で公開されている社員の評価テキストを当サイトが取得し、独自に集計・再計算したオリジナル指標です。取得日：2026-10-21以前\n※ 総合スコアは、当サイトが取得した各社の社員の評価データ（最大125件）の5点満点の点数を平均し100点換算したうえで、回答数30件未満の企業は50点方向へ10%縮小した独自指標です。\n※ 中途回答率は評価データの回答者に占める中途入社者の割合を5%刻みに丸めたものです。分母は回答者数であり、全社員に占める中途採用比率ではありません。\n公的データは、職場情報総合サイト（しょくばらぼ、厚生労働省）等の公表値を加工したもの。";
@@ -1378,7 +1380,7 @@ function openDetail(name){
       <div class="meta"><span class="tag">${esc(c.ind)}</span>${c.f?'<span class="tag f">外資</span>':""}<span class="ttag">${typeOf(c).name}</span><span class="tag">データ量 ${fDV(c.n)}</span></div></div>
       <div style="display:flex;gap:6px;align-items:center">${cmpBtn(c)}<button class="x" type="button" id="dlg-x" aria-label="閉じる">×</button></div></div>
     <p style="margin:0;font-size:13px"><span class="ttag">${typeOf(c).name}</span>　<span style="color:var(--muted)">${typeOf(c).desc}</span></p>
-    ${CID[c.name]?`<p style="margin:0;font-size:13px"><a class="extlink" href="/c/${CID[c.name]}">${esc(c.name)}の詳しいページ（合う人・合わない人・似ている会社）→</a></p>`:""}
+    ${CID[c.name]?`<p style="margin:0;font-size:13px"><a class="extlink" href="/c/${CID[c.name]}">${esc(c.name)}の詳しいページ（合う人・合わない人・似ている会社）→</a><br><a class="extlink" href="/c/${CID[c.name]}#gyaku">${esc(c.name)}の面接で聞くべき逆質問 →</a></p>`:""}
     ${vsDetail(c)}
     <div class="kpis">
       <div class="kpi"><span>あなたとのマッチ度</span><b>${r.m}%</b></div>
